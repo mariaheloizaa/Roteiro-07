@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Biblioteca</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="container">
+      <h1>Biblioteca</h1>
+
+      <form id="formLivro" class="form-card">
+        <label for="titulo">Título</label>
+        <input id="titulo" type="text" placeholder="Digite o título" required />
+
+        <label for="autor">Autor</label>
+        <input id="autor" type="text" placeholder="Digite o autor" required />
+
+        <label for="ano">Ano de publicação</label>
+        <input id="ano" type="number" min="0" placeholder="Ex.: 2025" required />
+
+        <button type="submit">Cadastrar livro</button>
+      </form>
+
+      <section class="lista-card">
+        <h2>Livros cadastrados</h2>
+
+        <div class="busca-box">
+          <label for="busca">Buscar por título</label>
+          <input id="busca" type="text" placeholder="Digite o título para pesquisar" />
+        </div>
+
+        <div id="lista" class="lista"></div>
+      </section>
+    </main>
+
+    <div id="modalEdicao" class="modal hidden" aria-hidden="true">
+      <div class="modal-overlay" id="overlayModal"></div>
+      <div class="modal-content" role="dialog" aria-modal="true" aria-labelledby="tituloModal">
+        <h3 id="tituloModal">Editar livro</h3>
+
+        <form id="formEdicao" class="modal-form">
+          <input type="hidden" id="editId" />
+
+          <label for="editTitulo">Título</label>
+          <input id="editTitulo" type="text" required />
+
+          <label for="editAutor">Autor</label>
+          <input id="editAutor" type="text" required />
+
+          <label for="editAno">Ano de publicação</label>
+          <input id="editAno" type="number" min="0" required />
+
+          <div class="modal-actions">
+            <button type="button" class="btn-secundario" id="fecharModal">Cancelar</button>
+            <button type="submit">Salvar</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
